@@ -1,12 +1,14 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-family: 'Jura', sans-serif;
 }
 
 .search {
-    height: 100vh;
+    position: relative;
+    height: 130vh;
     background: -webkit-linear-gradient(135deg, #08be40,#00b4ee,#807cf8,#3692e7);                                             
 }
 
@@ -16,15 +18,20 @@
     max-width: 37.5em;
     padding: 3em 2.5em;
     position: absolute;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     border-radius: 0.62em;
-    box-shadow: 0 1.25em 1.8em rgba(8, 21, 65, 0.25);
+    -webkit-box-shadow: 0 1.25em 1.8em rgba(8, 21, 65, 0.25);
+            box-shadow: 0 1.25em 1.8em rgba(8, 21, 65, 0.25);
 }
 
 .search__wrapper {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 9fr 1.25em 3fr;
     grid-template-columns: 9fr 3fr;
     gap: 1.25em;
 }
@@ -68,16 +75,27 @@
 }
 
 .search__info {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 4fr 20px 4fr 20px 4fr;
     grid-template-columns: 4fr 4fr 4fr;
     gap: 20px;
 }
 
 .search__info label {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     font-weight: 600;
     text-align: center;
     color: #222a43;
@@ -105,17 +123,24 @@
 
 @media (max-width: 550px) {
     .search__wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .search__info {
+        -ms-grid-columns: 4fr 4fr;
         grid-template-columns: 4fr 4fr;
     }
 }
 
 @media (max-width: 420px) {
     .search__info {
+        -ms-grid-columns: 4fr;
         grid-template-columns: 4fr;
     }
 }
